@@ -14,7 +14,7 @@ export default class Account extends Component {
 
   handleDepositClick(e) {
     e.preventDefault();
-    if (isNaN(this.refs.amount.value)) {
+    if (isNaN(this.refs.amount.value) || this.refs.amount.value < 0) {
       console.log("Not a number");
     }
     else {
@@ -29,7 +29,7 @@ export default class Account extends Component {
 
   handleWithdrawClick(e) {
     e.preventDefault();
-    if (isNaN(this.refs.amount.value)) {
+    if (isNaN(this.refs.amount.value) || this.refs.amount.value < 0) {
       console.log("Not a number!");
     } else {
       if (this.state.balance >= 0 && this.refs.amount.value <= this.state.balance) {
